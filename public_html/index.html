@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!---------------------- Bootstrap Cdn---------------------->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <!-- <link rel="icon" type="image/x-icon" href="./assets2/images/favicon.svg"> -->
+  <link rel="stylesheet" href="./assets2/css/style.css">
+
+
+  <title>OnlyClassAction</title>
+  <style>
+    .suggestionsContainer{
+      background-color:white;
+      margin-right: 17px;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+      padding: 10px 10px 0 10px;
+      margin-top: 4px;
+      display: none;
+      max-height: 300px;
+      overflow: auto;
+
+    }
+    
+    .suggestionsContainer.active{
+      display: flex;
+      border-bottom: unset !important;
+      font-weight: unset !important;
+
+    }
+
+    .search-input.active{
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .suggestion-items{
+      padding: 0;
+      width: 100%;
+    }
+    .suggestion-item{
+      display: flex;
+      padding: 10px;
+      width: 100%;
+      border-bottom: 1px solid #EAF5F4;
+      margin-top: 3px;
+    }
+    .suggestion-item-no-data{
+      color: #2D9B8E !important;
+      width: 100%;
+      text-align: center !important;
+    }
+    .suggestion-item:last-child{
+      border-bottom: unset;
+    }
+    .suggestion-item-container{
+      display: inline-flex;
+      align-items: center;
+    }
+    .suggestion-item:hover{
+      background-color: #EAF5F4;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .suggestion-item-img{
+      border-radius: 8px;
+      height: 50px;
+      min-width: 50px;
+      width: 50px;
+      overflow: hidden;
+      position: relative;
+    }
+    .suggestion-item-img img{
+      height: 50px !important;
+      width: 50px !important;
+      left: 0 !important;
+      top: 0 !important;
+      object-fit: cover;
+    }
+    .suggestion-item-content{
+      display: flex;
+      flex-direction: column;
+      row-gap: 4px;
+      margin-left: 10px;
+      overflow: hidden;
+    }
+    .suggestion-item-content p {
+      line-height: 1;
+      margin: 0;
+    }
+    .suggestion-item-title {
+      font-size: 12px;
+      line-height: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-transform: capitalize;
+    }
+    .suggestion-item-title .highlight {
+      line-height: 1;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .suggestion-item-category {
+      color: #2D9B8E !important;
+    }
+    .suggestion-item-category span{
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: capitalize;
+      line-height: 1;
+    }
+
+  </style>
+</head>
+
+<body>
+  <section>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+          <div class="pad-med">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <!-- <span class="navbar-toggler-icon"></span> -->
+              <span><img class="" src="./assets2/images/ham.svg" alt="ham"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="./assets2/images/nav-logo.svg" alt="nav-logo"></a>
+          </div>
+          <div>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="Coming_soon/index.html" id="navbarDropdown" role="button">
+                    Lawsuits & Settlements
+                  </a>
+                  <ul class="dropdown-menu d-none" aria-labelledby="navbarDropdown">
+                    <h2 class="drop-title-menu" style="padding: 16px 0 0 16px;">Type of Lawsuits
+                    </h2>
+                    <div class="drop-menumain">
+                      <div>
+                        <li><a class="dropdown-item" href="Coming_soon/index.html">Trending Lawsuits</a></li>
+                        <li><a class="dropdown-item" href="Coming_soon/index.html">Defective Products</a></li>
+                        <li><a class="dropdown-item" href="Coming_soon/index.html">Cancer Lawsuits</a></li>
+                        <li><a class="dropdown-item" href="Coming_soon/index.html">Auto Lawsuits</a></li>
+                        <li><a class="dropdown-item" href="Coming_soon/index.html">Employment & Workplace</a></li>
+                      </div>
+                      <div>
+                        <li><a class="dropdown-item" href="Coming_soon/index.html">Personal Injury Lawsuits</a></li>
+                        <li><a class="dropdown-item" href="Coming_soon/index.html">All Lawsuits</a></li>
+                      </div>
+                    </div>
+                    <div class="large-settle">
+                      <h2 class="drop-title-menu" style="padding: 16px 0 0 16px;">Large
+                        Settlement's</h2>
+                      <div class="drop-menumain">
+                        <div>
+                       <li><a href="../Lawsuit/roundup-plm.html">$10.9B Roundup Settlement</a></li>
+                          <li><a href="../Lawsuit/talcum-lawsuits.html">$8.9B Talcum Settlement</a></li>
+                        </div>
+                        <div>
+                          <li><a href="../Lawsuit/camp-lejeune-lawsuits.html">$6B Camp Lejeune Settlement</a></li>
+                          <li><a href="../Lawsuit/cpap-lawsuits.html">$62M Philips Settlement</a></li>                        </div>
+                      </div>
+                    </div>
+                  </ul>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="Coming_soon/index.html">Class Action News</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./Aboutus/About-us.html">About Us</a>
+                </li>
+
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <section class="hero-section ">
+    <div class="hero-bg">
+      <div class="container">
+        <div class="hero-top">
+          <img src="./assets2/images/law.svg" alt="law">
+          <p>Don't suffer in silence. Find out if you're eligible for compensation.</p>
+        </div>
+        <div class="hero-txt-im-main">
+          <div class="hero-txt">
+            <h2>Get Your Share of
+              <span>Settlements</span>
+            </h2>
+            <p>Make a lasting impact by participating in class action lawsuit. Find cases that align with
+              your values and help create positive change.</p>
+        <div class="hero-search">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search Here" oninput="showSuggestions()">
+            <!-- Suggestions container -->
+            <div id="suggestionsContainer" class="suggestionsContainer">
+              
+            </div>
+            <button type="button" class="center" id="searchButton" onclick="showSuggestions()">Search</button>
+            <img src="./assets2/images/search-icon.svg" alt="search-icon">
+        </div>
+          </div>
+          <div class="hero-im">
+            <img src="./assets2/images/home-hero.png" alt="home-hero">
+            <div class="sett">
+              <div class="sett-bx">
+                <img src="./assets2/images/trazu.svg" alt="trazu">
+              </div>
+              <div class="sett-txt">
+                <h2>1,000+ </h2>
+                <p>Lawsuits Settled</p>
+              </div>
+            </div>
+            <div class="fund">
+              <div class="sett-bx">
+                <img src="./assets2/images/fund.svg" alt="fund">
+              </div>
+              <div class="sett-txt">
+                <h2>Over $20B</h2>
+                <p>Settled in Funds</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="trustred-features">
+          <div class="trusted-txt">
+            <h2><span>Trusted</span> & Featured</h2>
+          </div>
+          <div class="trusted-logo">
+            <img src="./assets2/images/forbes.svg" alt="forbes">
+            <img src="./assets2/images/yahoo.svg" alt="yahoo">
+            <img src="./assets2/images/billboard.svg" alt="billboard">
+            <img src="./assets2/images/foxnews.svg" alt="foxnews">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="Featured-settelment-section contan">
+    <div class="container" style="max-width: 1360px !important;">
+      <div>
+        <div class="Featured-settelment-main">
+          <div class="fea-settle-title">
+            <h2>Featured <span>Settlements</span></h2>
+            <img src="./assets2/images/line.png" alt="">
+          </div>
+          <div class="fea-settle-cards position-relative" style="padding-left: 20px;padding-right: 20px;">
+
+
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper" style="width: 100%;">
+                <div class="swiper-slide">
+                  <div class="mainslide">
+                    <!-- slide-1 -->
+                    <a href="./Lawsuit/roundup-plm.html" class=" f-s-card d-block text-decoration-none">
+                      <div class="ppss">
+                        <div>
+                          <h2>Roundup Cancer Lawsuits</h2>
+                          <div class="sm-feature"><img src="./assets2/images/star.svg" alt="star">Featured</div>
+                          <p>If you or a loved one has been diagnosed with cancer after
+                            exposure to Roundup, It's time to take a stand. Demand
+                            accountability and secure the settlement that you are due
+                            related to your damaged health and well-being.
+
+                          </p>
+                          <ul class="fs-list">
+                            <li>
+                              <p>Proof Required? <span>Diagnosis Documents</span></p>
+                            </li>
+                            <li>
+                              <p>Average Settlement <span>VARIES</span></p>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="fs-lrn-mr">
+                          <img src="./assets2/images/pump.svg" alt="pump">
+                          <div class="lern-btns">Learn More <img class="arr-im" src="./assets2/images/Arrow.svg"
+                              alt="Arrow"></div>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- slide-2 -->
+                    <a href="./Lawsuit/hair-relaxer-lawsuits.html" class=" f-s-card d-block text-decoration-none">
+                      <div class="ppss">
+                        <div>
+                          <h2>Hair Relaxer Cancer Lawsuits</h2>
+                          <div class="sm-feature"><img src="./assets2/images/star.svg" alt="star">Featured</div>
+                          <p>People of all ages and ethnicities have been injured and suffered
+                            long-term negative health consequences after using hair relaxer
+                            products. If you or someone you love has been harmed related to
+                            the use of these products, we can help!</p>
+                          <ul class="fs-list">
+                            <li>
+                              <p>Proof Required? <span>Diagnosis Documents</span></p>
+                            </li>
+                            <li>
+                              <p>Average Settlement <span>VARIES</span></p>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="fs-lrn-mr">
+                          <img src="./assets2/images/hair-color.svg" alt="hair-color">
+                          <div class="lern-btns">Learn More <img class="arr-im" src="./assets2/images/Arrow.svg"
+                              alt="Arrow"></div>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- slide-3 -->
+                    <a href="./Lawsuit/camp-lejeune-lawsuits.html" class=" f-s-card d-block text-decoration-none">
+                      <div class="ppss">
+                        <div>
+                          <h2>Camp Lejeune Veteran Lawsuits</h2>
+                          <div class="sm-feature"><img src="./assets2/images/star.svg" alt="star">Featured
+                          </div>
+                          <p>If you worked or were stationed at Camp Lejeune and you have
+                            contracted cancer related to exposure to the water supply, we
+                            can help you take the first steps towards the settlement that
+                            you are owed for your injuries.
+                          </p>
+                          <ul class="fs-list">
+                            <li>
+                              <p>Proof Required? <span>Diagnosis Documents</span></p>
+                            </li>
+                            <li>
+                              <p>Average Settlement <span>VARIES</span></p>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="fs-lrn-mr">
+                          <img src="./assets2/images/cap.svg" alt="cap">
+                          <div class="lern-btns">Learn More <img class="arr-im" src="./assets2/images/Arrow.svg"
+                              alt="Arrow"></div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="mainslide">
+                    <!-- slide-4 -->
+                    <a href="./Lawsuit/talcum-lawsuits.html" class=" f-s-card d-block text-decoration-none">
+                      <div class="ppss">
+                        <div>
+                          <h2>Talcum Powder Lawsuits</h2>
+                          <div class="sm-feature"><img src="./assets2/images/star.svg" alt="star">Featured</div>
+                          <p>If you used Johnson & Johnson Baby Powder continuously for a
+                            period of years and have been diagnosed cancer, you may be
+                            eligible for significant compensation.
+                          </p>
+                          <ul class="fs-list">
+                            <li>
+                              <p>Proof Required? <span>Diagnosis Documents</span></p>
+                            </li>
+                            <li>
+                              <p>Average Settlement <span>VARIES</span></p>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="fs-lrn-mr">
+                          <svg width="38" height="26" viewBox="0 0 38 26" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M23.2009 2.5785V2.57739C21.0831 0.146429 16.917 0.145316 14.7991 2.5785L2.83271 16.3398H35.1663L23.2009 2.5785ZM14.5469 11.8867C13.932 11.8867 13.4336 11.3883 13.4336 10.7734C13.4336 10.1585 13.932 9.66016 14.5469 9.66016C15.1617 9.66016 15.6602 10.1585 15.6602 10.7734C15.6602 11.3883 15.1617 11.8867 14.5469 11.8867ZM19 11.8867C18.3852 11.8867 17.8867 11.3883 17.8867 10.7734C17.8867 10.1585 18.3852 9.66016 19 9.66016C19.6148 9.66016 20.1133 10.1585 20.1133 10.7734C20.1133 11.3883 19.6148 11.8867 19 11.8867ZM19 7.4336C18.3852 7.4336 17.8867 6.93514 17.8867 6.32032C17.8867 5.70534 18.3852 5.20703 19 5.20703C19.6148 5.20703 20.1133 5.70534 20.1133 6.32032C20.1133 6.93514 19.6148 7.4336 19 7.4336ZM36.8867 18.5664H1.11328C0.497934 18.5664 0 19.0643 0 19.6797C0 20.7116 0.705301 21.582 1.65998 21.8333C3.03636 22.1955 4.99618 23.2003 5.44461 24.4981C5.52078 24.7166 5.663 24.9059 5.85156 25.0399C6.04012 25.1739 6.2657 25.246 6.49704 25.2461H31.503C31.977 25.2461 32.3988 24.946 32.5554 24.4981C33.0041 23.1992 34.9697 22.1884 36.332 21.8353C37.2908 21.5869 38 20.7144 38 19.6797C38 19.0643 37.5021 18.5664 36.8867 18.5664Z"
+                              fill="#26524E" />
+                          </svg>
+                          <div class="lern-btns">Learn More <img class="arr-im" src="./assets2/images/Arrow.svg"
+                              alt="Arrow"></div>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- slide-5 -->
+                    <a href="./Lawsuit/cpap-lawsuits.html" class=" f-s-card d-block text-decoration-none">
+                      <div class="ppss">
+                        <div>
+                          <h2>CPAP/BiPAP Lawsuits</h2>
+                          <div class="sm-feature"><img src="./assets2/images/star.svg" alt="star">Featured</div>
+                          <p>Have you or a loved one used a Philips CPAP or BiPAP machine
+                            between 2009 and 2023? If so, you might be entitled to
+                            compensation. Philips has admitted that there is a link between
+                            these devices and various health conditions.</p>
+                          <ul class="fs-list">
+                            <li>
+                              <p>Proof Required? <span>Diagnosis Documents</span></p>
+                            </li>
+                            <li>
+                              <p>Average Settlement <span>VARIES</span></p>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="fs-lrn-mr">
+                          <img src="./assets2/images/slide5.svg" alt="hair-color">
+                          <div class="lern-btns">Learn More <img class="arr-im" src="./assets2/images/Arrow.svg"
+                              alt="Arrow"></div>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- slide-6 -->
+                    <a href="./Lawsuit/paraquat-lawsuits.html" class=" f-s-card d-block text-decoration-none">
+                      <div class="ppss">
+                        <div>
+                          <h2>Paraquat Weed Killer Lawsuits</h2>
+                          <div class="sm-feature"><img src="./assets2/images/star.svg" alt="star">Featured
+                          </div>
+                          <p>Parkinson’s disease is the main condition that is linked to
+                            Paraquat exposure. Did you develop Parkinson’s disease after
+                            exposure to Paraquat? If so, you might be entitled to
+                            compensation.
+                          </p>
+                          <ul class="fs-list">
+                            <li>
+                              <p>Proof Required? <span>Diagnosis Documents</span></p>
+                            </li>
+                            <li>
+                              <p>Average Settlement <span>VARIES</span></p>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="fs-lrn-mr">
+                          <img src="./assets2/images/slide6.svg" alt="cap">
+                          <div class="lern-btns">Learn More <img class="arr-im" src="./assets2/images/Arrow.svg"
+                              alt="Arrow"></div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- </div> -->
+              </div>
+              <div class="swiper-pagination"></div>
+
+            </div>
+
+            <div class="pps">
+              <div class="left-arrow swiper-button-prev"><img src="./assets2/images/left.svg" alt="left-arrow">
+              </div>
+              <div class="right-arrow swiper-button-next"><img src="./assets2/images/right.svg" alt="right-arrow">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <section class="tranding-stories-section contan">
+    <div class="container">
+      <div class="tran-title">
+        <h2>Trending <span>Stories</span></h2>
+      </div>
+      <div class="tranding-stories-main">
+
+        <a class="ho-shad" style="text-decoration: none;height: fit-content;" href="roundup-lawsuit.html">
+          <div class="farm-main-blog">
+            <img class="not-yet-res" src="./assets2/images/tranding-story.png" alt="trand-story">
+            <img class="res-im" src="./assets2/images/responsive-view.svg" alt="responsive-view">
+            <div class="cn-law-title">
+              <div class="cancer-law" style="white-space: nowrap;max-width: unset;">
+                Roundup Lawsuits
+              </div>
+              <p class="sp-date"><span></span>20 Apr 2023</p>
+            </div>
+            <h2 class="main-blog-decri">
+              The Roundup Class Action Lawsuit: What You Need to Know and How to Seek Compensation
+              <img style="width: auto;" src="./assets2/images/share-logo.svg" alt="share-logo">
+            </h2>
+            <p class="main-blog-para">$ 11 Billion roundup Settlement’s Compensation for NHL CLL and other
+              Cancers Linked to Glyphosate.</p>
+
+          </div>
+        </a>
+
+        <div class="related-sub-story">
+          <h2>Related Stories</h2>
+          <a style="text-decoration: none;" href="https://onlycaraccidents.com/">
+            <div class="top-dec shad-hoov">
+              <div class="related-story-detail">
+                <img src="./assets2/images/r1.svg" alt="r1">
+              </div>
+              <div class="st-dec">
+                <h3>Those Injured in an auto accident may be entitled to a large settlement</h3>
+                <div class="st-date">
+                  <p>02 OCT, 2023</p>
+                  <div class="st-dedline"><img src="./assets2/images/y-star.svg">Sponsored</div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a style="text-decoration: none;" href="camp-lejeune.html">
+            <div class="top-dec shad-hoov">
+              <div class="related-story-detail">
+                <img src="./assets2/images/CamL.png" alt="r2">
+              </div>
+              <div class="st-dec">
+                <h3>Company Discriminates against disabled veterans, The veterans are fighting back</h3>
+                <div class="st-date">
+                  <p>18 DEC, 2023</p>
+                  <div class="st-dedline" style="background-color: #F0E0E0;max-width: 100%; color: #C80000;"><img
+                      src="./assets2/images/r-star.svg">Work-Related Lawsuits</div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a style="text-decoration: none;" href="https://surveyzaps.com/">
+            <div class="top-dec shad-hoov">
+              <div class="related-story-detail">
+                <img src="assets2/images/r33.png">
+              </div>
+              <div class="st-dec">
+                <h3>$100 Visa Gift Card Giveaway: Weekly Drawings!</h3>
+                <div class="st-date">
+                  <p>01 DEC, 2023</p>
+                  <div class="st-dedline"><img src="./assets2/images/y-star.svg">Sponsored</div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a style="text-decoration: none;" href="paraquat.html">
+            <div class="top-dec shad-hoov">
+              <div class="related-story-detail">
+                <img src="./assets2/images/r2.svg" alt="r2">
+              </div>
+              <div class="st-dec">
+                <h3>Another Harmful Weed Killer? Paraquat’s Toxic Chemical Lawsuit</h3>
+                <div class="st-date">
+                  <p>5 Nov, 2023</p>
+                  <div class="st-dedline" style="background-color: #CFF9E2;max-width: 100%;color: #01853E;"><img
+                      src="./assets2/images/g-star.svg">Lawsuit Updates</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="Stories-product-cards">
+
+        <a style="text-decoration: none;" href="cpap.html">
+          <div class="sto-pro-card shad-sub-blog">
+            <img width="100%" height="240px" src="./assets2/images/pro-1.png" alt="pro-1">
+            <div class="cn-law-title">
+              <div class="cancer-law">
+                Cancer Lawsuits
+              </div>
+              <p class="sp-date"><span></span>04 Feb 2023</p>
+            </div>
+            <div class="title-share hov-shad-2">
+              <h2>Philips CPAP Class Action Recall Cases</h2>
+              <img src="./assets2/images/share-logo.svg" alt="share-logo">
+            </div>
+            <div class="title-share-dec">
+              <p>FDA Updated it’s medical report from databases with new injury report linked to the
+                recall Philip's CPAP devices. Since 1981 the FDA has recieved..</p>
+            </div>
+          </div>
+        </a>
+
+        <a style="text-decoration: none;" href="lawsuit-blog.html">
+          <div class="sto-pro-card shad-sub-blog">
+            <img width="100%" height="240px" src="./assets2/images/pro-2.png" alt="pro-2">
+            <div class="cn-law-title">
+              <div class="cancer-law">
+                Cancer Lawsuits
+              </div>
+              <p class="sp-date"><span></span>08 Dec 2023</p>
+            </div>
+            <div class="title-share hov-shad-2">
+              <h2>What You Need to Know About the Johnson and Johnson Talc Lawsuit</h2>
+              <img src="./assets2/images/share-logo.svg" alt="share-logo">
+            </div>
+            <div class="title-share-dec">
+              <p>Johnson & Johnson stopped selling talc-based baby powder globally in 2023. The drug maker
+                said on Thursday more than two years after ending it’s sale..</p>
+            </div>
+          </div>
+        </a>
+
+        <a style="text-decoration: none;" href="camp-lejeune.html">
+          <div class="sto-pro-card shad-sub-blog">
+            <img width="100%" height="240px" src="./assets2/images/pro-3.png" alt="pro-3">
+            <div class="cn-law-title">
+              <div class="cancer-law">
+                Cancer Lawsuits
+              </div>
+              <p class="sp-date"><span></span>23 Nov 2023</p>
+            </div>
+            <div class="title-share hov-shad-2">
+              <h2>Camp Lejeune Water Contamination Lawsuits - What Happened?</h2>
+              <img src="./assets2/images/share-logo.svg" alt="share-logo">
+            </div>
+            <div class="title-share-dec">
+              <p>A widow from Illinois has filed a wrongful-death lawsuits alleging that she lost her
+                husband due to complications from Parkinson disease caused by..</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="active-section contan">
+    <div class="container">
+      <div class="active-main">
+        <div class="active-title">
+          <h2>Active<span> Lawsuits</span></h2>
+          <a href="#">View All</a>
+        </div>
+        <div class="active-cards">
+          <div class="a-card">
+            <a href="./Lawsuit/camp-lejeune-lawsuits.html"><img width="100%" src="./assets2/images/active-1.png" alt="active-1"></a>
+            <div class="a-card-dec">
+              <div class="sb-cont">
+                <div>
+                  <h2>Camp LeJeune</h2>
+                  <p>Those who were stationed or worked at camp LeJeune may have been affected by
+                    contaminated water</p>
+                </div>
+                <div>
+                  <a class="rigt-arr" href="camp-lejeune.html">Read More <img class="arr-im" src="./assets2/images/arrow-2.svg"
+                      alt="arrow-2"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="a-card">
+            <a href="./Lawsuit/roundup-plm.html"><img width="100%" src="./assets2/images/active-2.png" alt="active-2"></a>
+            <div class="a-card-dec">
+              <div class="sb-cont">
+                <div>
+                  <h2>Roundup</h2>
+                  <p>Users of Roundup weed killer may develop cancer, Non-Hodgkin Lymphoma and other
+                    cancer sub-types.</p>
+                </div>
+                <div>
+                  <a class="rigt-arr" href="roundup-lawsuit.html">Read More <img class="arr-im" src="./assets2/images/arrow-2.svg"
+                      alt="arrow-2"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="a-card">
+            <a href="./Lawsuit/talcum-lawsuits.html"><img width="100%" src="./assets2/images/active-3.png" alt="active-3"></a>
+            <div class="a-card-dec">
+              <div class="sb-cont">
+                <div>
+                  <h2>Talcum Powder</h2>
+                  <p>Women may have developed Ovarian cancer after using talcum powder
+
+                  </p>
+                </div>
+                <a class="rigt-arr" href="#">Read More <img class="arr-im" src="./assets2/images/arrow-2.svg"
+                    alt="arrow-2"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about-us-section contan">
+    <div class="container">
+      <div class="about-us-main">
+        <div class="about-us-title">
+          <h2>About<span> Us</span></h2>
+          <img class="wid-100" src="./assets2/images/about-line.png" alt="about-line">
+        </div>
+        <div class="about-us-txt-im">
+          <div class="about-us-txt">
+            <h2>At <span style="color: #2D9B8E;">O</span>nlyClassActions.com</h2>
+            <p>We understand the impact that class action lawsuits can have on people and communities as a
+              whole. These important lawsuits are the area of law that we have chosen to direct our
+              passion and commitment toward. We help our clients to seek the settlements that they are due
+              related to injuries that were caused by corporations or the government.</p>
+            <p class="pt-3">With our extensive network of top rated personal injury lawyer. We ensure that
+              Contact us today to find out how we can help you with the injuries and long-term health
+              problems that you might have suffered related to the various class action suits that we are
+              currently working on.</p>
+          </div>
+          <div class="about-us-im">
+            <img width="100%" src="./assets2/images/about-us.png" alt="about-us">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="frequently-questoin-section contan">
+    <div class="container">
+      <div class="frequently-questoin-mian">
+        <div class="fre-ques-title">
+          <h2>Frequently Asked Questions <span>(FAQ)</span></h2>
+          <img style="width: 100%;object-fit: scale-down;" src="./assets2/images/fre-ques.png" alt="fre-ques">
+        </div>
+        <div class="fre-ques-accodian">
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseTwo">
+                  What is a Class Action Lawsuit?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingTwo">
+                <div class="accordion-body">
+                  A class action is a kind of lawsuit in which one or more parties file a claim on behalf of a larger group of people collectively referred to as the class. When the complaints or losses are shared by the entire class and it would be impractical to file dozens or hundreds of separate lawsuits, this legal action is taken.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseOne">
+                  Will I have to pay an attorney for a class action lawsuit?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                  In these class action lawsuits, lawyers typically represent you on a contingency fee basis. This implies that if the case is successful, the attorneys' fees will be deducted from the class action settlement or judgment rather than being paid up front.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseThree">
+                  How do I know if I’m eligible to join a class action lawsuit?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingThree">
+                <div class="accordion-body">
+                  The specific requirements listed in the class definition govern who can join a class action lawsuit. These requirements are frequently connected to using a product, working for a specific company, or being exposed to a specific environmental factor for a predetermined amount of time.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseFour">
+                  What are the benefits of joining a class action lawsuit?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingFour">
+                <div class="accordion-body">
+                  Participating in a class action lawsuit can lower legal expenses, expedite the courtroom proceedings, and offer relief in situations where individual claims might be too minor to pursue on their own. Additionally, it guarantees that each class member will be represented and able to gain from a single verdict or settlement.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseFive">
+                  Can I opt-out of a class action lawsuit?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingFive">
+                <div class="accordion-body">
+                  It is possible for class members to choose not to participate in a class action lawsuit. Should you decide to opt out, you will not be constrained by the class action's verdict and will still be able to bring a lawsuit on your own behalf.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseSix">
+                  What happens if the class action lawsuit is lost?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingSix">
+                <div class="accordion-body">
+                  Members of a class action lawsuit usually have no obligations if the lawsuit is unsuccessful. Because of the contingency fee agreement, lawyers only get compensated when they prevail. Nonetheless, members of the class generally forfeit their ability to file separately for the same claim if the class action lawsuit is unsuccessful.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer-section contan">
+    <div class="container">
+      <div class="footer-main">
+        <div class="foo-1">
+          <a href="#"><img src="./assets2/images/footer-logo.svg" alt="footer-logo"></a>
+          <div class="footer-links">
+            <h2>Lawsuits & Settlements</h2>
+            <a href="Coming_soon/index.html">View All Settlements</a>
+            <a href="Coming_soon/index.html">Latest Class Action News</a>
+            <a href="./Aboutus/About-us.html">About Us</a>
+            <a href="Coming_soon/index.html">File A Claim</a>
+            <a href="Coming_soon/index.html">Site Maps</a>
+          </div>
+          <div class="footer-links xpadd">
+            <!-- <h2></h2> -->
+            <a href="Coming_soon/index.html">Disclaimer</a>
+            <a href="Coming_soon/index.html">Commenting Policy</a>
+            <a href="Coming_soon/index.html">Advertise With Us</a>
+            <a href="Coming_soon/index.html">Opt-Out</a>
+          </div>
+        </div>
+
+        <div class="foo-2">
+          <h2>Subscribe</h2>
+          <p>Join our newsletter to stay up to date on cases and settlements.</p>
+          <div class="footer-field">
+            <input type="email" name="email" id="email" placeholder="Enter your email">
+            <button type="submit" id="subscribeBtn">Subscribe</button>
+          </div>
+          <!-- Bootstrap Modal for error message -->
+          <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <!-- <h5 class="modal-title" id="errorModalLabel">Error</h5> -->
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div style="text-align: center;">
+                  <img width="50px" height="50px" src="./assets2/images/error.svg" alt="error">
+                </div>
+                <div class="modal-body">
+                  <div class="error-message">
+                    <h2 style="padding-top: 0;">Failed To Sign Up</h2>
+                    <p>Please enter your email address below</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bootstrap Modal for success message -->
+          <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <!-- <h5 class="modal-title" id="successModalLabel">Thank You</h5> -->
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div style="text-align: center;">
+                  <img width="150px" height="150px" src="./assets2/images/success-modal.svg" alt="success-modal">
+                </div>
+                <div class="modal-body">
+                  <div class="successfull-meassge">
+                    <h2>Thanks for Subscribing!</h2>
+                    <p>Thanks for signing up. We'll send you class action news, updates and trending
+                      lawsuits to keep you up-to-date.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3>By subscribing you agree to with our <a href="#">Privacy Policy</a> and provide consent to
+            receive updates from our company.</h3>
+        </div>
+
+      </div>
+      <div class="footer-bar">
+        <div class="f-bar-link">
+          <p>© 2024 Only Class Action. All rights reserved.</p>
+           <a href="./Privacy.html">Privacy Policy</a>
+          <a href="./Terms.html">Terms of Service</a>
+          <a href="#">Cookies Settings</a>
+        </div>
+        <div class="f-bar-social-icon">
+          <a href="#"><img src="./assets2/images/Facebook.svg" alt="Facebook"></a>
+          <a href="#"><img src="./assets2/images/Instagram.svg" alt="Instagram"></a>
+          <a href="#"><img src="./assets2/images/Twitter.svg" alt="Twitter"></a>
+          <a href="#"><img src="./assets2/images/LinkedIn.svg" alt="LinkedIn"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ************************Scripts Start Here*********************************-->
+
+  <!--------------------------------- Jquery --------------------------->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-------------------------------- Jquery Ends------------------------------->
+
+  <!--------------------------------- Popper Js ------------------------------->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <!--------------------------------- Popper Js Ends----------------------------->
+
+  <!--------------------------------- Bootstrap 5 cdn ---------------------------->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <!------------------------------------ Bootstrap 5 cdn Ends--------------------->
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <script src="./assets2/js/script.js"></script>
+
+  <script>
+    var time;
+
+    $(document).ready(function () {
+      if ($(window).width() > 991) {
+        $(".nav-item.dropdown").on("mouseenter click", function () {
+          $(".dropdown-menu").toggleClass("d-none d-block");
+        });
+      } else {
+        $(".nav-item.dropdown").on("click", function () {
+          $(".dropdown-menu").toggleClass("d-none d-block");
+        });
+      }
+    });
+  
+// List of available blog URLs
+    var blogURLs = ["camp-lejeune","cpap", "lawsuit-blog", "paraquat", "roundup-lawsuit"];
+    var matchingURLs = [];
+
+    // show loader
+    function showLoader(loading = true){
+      var suggestionsButton = document.getElementById('searchButton');
+      var suggestionsHTML = loading ? '<div class="loader"></div>' : 'Search';
+      suggestionsButton.innerHTML = suggestionsHTML;
+    }
+
+    function activeList(hasData = true){
+      var searchInput = document.getElementById('searchInput');
+      var suggestionsContainer = document.getElementById('suggestionsContainer');
+      if(hasData){
+        searchInput.classList.add('active');
+        suggestionsContainer.classList.add('active');
+      }else{
+        searchInput.classList.remove('active');
+        suggestionsContainer.classList.remove('active');
+      }
+    }
+
+    function clearSearchInput(){
+      var searchInput = document.getElementById('searchInput');
+      searchInput.value = '';
+    }
+
+    function suggestionsContainerList(items = [], query){
+      var list = '<ul class="suggestion-items">';
+        if(items.length == 0){
+          list+=` <li class="suggestion-item no-data">
+            <p class="suggestion-item-no-data">Not data found!</p>
+            </li>`
+        }
+        items.forEach(item=>{
+          var {thumbnail, title, category, type, _id} = item; 
+          
+          var search_regexp = new RegExp(query, "gi");
+          var formattedTitle = title.replace(search_regexp,"<span class='highlight'>"+query+"</span>");
+          
+          list+= `
+                <li class="suggestion-item" id="${_id}" onclick="selectSuggestion(this.id)">
+                  <div class="suggestion-item-container">
+                    <div class="suggestion-item-img">
+                      <img src="${thumbnail}" alt="${title}">
+                    </div>
+                    <div class="suggestion-item-content">
+                      <p class="suggestion-item-title">${formattedTitle}</p>
+                      <p class="suggestion-item-category"><span>${type}:</span> in ${category.label}</p>
+                    </div>
+                  </div>
+                </li>
+             `;
+        })
+      list+='</ul>';
+      return list;
+    }
+    const debounce = (callback, delay) => {
+      // Declare a variable called 'timer' to store the timer ID
+      let timer;
+
+      // Return an anonymous function that takes in any number of arguments
+      return function (...args) {
+        // Clear the previous timer to prevent the execution of 'callback'
+        clearTimeout(timer);
+
+        // Set a new timer that will execute 'callback' after the specified delay
+        timer = setTimeout(() => {
+          callback(...args);
+        }, delay);
+      };
+    };
+    
+    const  showSuggestions = debounce(()=>{
+        var searchInput = document.getElementById('searchInput');
+        var searchQuery = searchInput.value.toLowerCase();
+        var suggestionsContainer = document.getElementById('suggestionsContainer');
+
+        // reset states and return if query is empty
+        if(searchQuery== ''){
+          showLoader(false);
+          activeList(false);
+          return;
+        }
+        
+        // start loader
+        showLoader();
+        
+        // get data from api
+        $.getJSON(`http://localhost:5000/api/blogs/search?query=${searchQuery}`, function({ data }){
+
+          const {items } = data;
+          
+          // hide loader
+          showLoader(false);
+
+           // Generate HTML for suggestions
+          var suggestionsHTML = suggestionsContainerList(items, searchQuery);
+
+          // Update the suggestions container
+          suggestionsContainer.innerHTML = suggestionsHTML;
+          activeList();
+        })      
+    }, 500)
+
+    //navigate to blog details page
+    function selectSuggestion(id) {
+        activeList(false);
+        clearSearchInput();
+        window.location.href = `camp-lejeune.html?id=${id}`;
+    }
+
+  </script>
+
+</html>

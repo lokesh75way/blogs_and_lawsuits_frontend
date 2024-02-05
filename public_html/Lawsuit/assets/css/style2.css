@@ -1,0 +1,504 @@
+br {
+    display: block; /* makes it have a width */
+    content: ""; /* clears default height */
+    margin-top: 10px; /* change this to whatever height you want it */
+}
+.pt-60{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 0rem;
+
+}
+.pt-32{
+padding-top: 33px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"] {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Optional: Override styles for different browsers */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+.pages-link{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    padding-bottom: 30px;
+
+}
+.pages-link a{
+    padding: 10px;
+    border: 1px solid #2D9B8E;
+    color: #2D9B8E;
+    text-decoration: none;
+}
+.pages-link a:hover
+{
+    background-color:  #2D9B8E;
+    color: white;
+}
+
+/* --------------------------------------roundup-home-section-------------- */
+.roundup-home-section .round-bg {
+    background-image: url(../images/roun-home-bg.webp);
+    /* min-height: 885px; */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.roundup-home-section .round-bg.camp-bg{
+    background-image: url(../images/roun-home-bg.webp);
+}
+.roundup-home-section .round-bg.camp-l-bg{
+    background-image: url(../images/camp-l-bg.webp);
+}
+.roundup-home-section .round-bg.telcum{
+    background-image: url(../images/talcum-bg.webp);
+}
+.roundup-home-section .round-bg.cpap-lawsuits{
+    background-image: url(../images/cpap-plm-bg.webp);
+}
+.roundup-home-section .round-bg.hair-remove-bg{
+    background-image: url(../images/hair-remove-bg.webp);
+}
+
+.roundup-home-section .round-bg.paraquat-lawsuits{
+    background-image: url(../images/paraquat-bg.webp);
+}
+/*.roundup-home-section .round-bg{*/
+    /*background-image: url(../images/auto-bg.webp);*/
+/*}*/
+.roundup-home-section .main-roundup-cancer {
+    display: flex;
+    justify-content: space-between;
+    padding: 11px 16px 0;
+
+}
+
+.roundup-home-section .main-roundup-cancer .roundup-cancer {
+    width: 100%;
+    max-width: 560px;
+}
+
+.roundup-cancer {
+    padding-top: 70px;
+}
+
+.roundup-cancer h2 {
+    color: var(--White, #FCFCFC);
+    font-family: Inter;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 80px;
+    /* 142.857% */
+}
+
+.roundup-cancer p {
+    padding-top: 24px;
+    color: var(--White, #FCFCFC);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 34px;
+    /* 141.667% */
+}
+.gray-color{
+    color: #CBB17A !important;
+}
+.cancer-form2{
+    background-image: url(../images/cancer-form2.png) !important;
+}
+.cancer-form2 .Stay-up .input-field input,
+.cancer-form2 .Stay-up .input-field select {
+    border: 1px solid #CBB17A;
+}
+.cancer-form2 .Stay-up .input-field input::placeholder{
+    color: #B4B4B4;
+}
+.cancer-form2 .Stay-up button {
+background-color: #CBB17A;
+}
+.roundup-cancer-form {
+    max-width: 519px;
+    background-image: url(../images/cancer-form.png);
+    /* height: 600px; */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 9px 22px;
+    width: 519px;
+}
+.chnge .accordion-button:not(.collapsed) {
+    color: #CBB17A;
+}
+.chnge .accordion-button:not(.collapsed)::after {
+    background-image: url(../images/gray-accord.svg);
+    transform: rotate(0deg);
+}
+.roundup-cancer-form .the-loop h3 {
+    color: var(--black, #1F1F1F);
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.roundup-cancer-form .the-loop h3 span {
+    font-weight: 600;
+}
+
+.roundup-cancer-form .the-loop .sty-p {
+    padding-top: 8px;
+    color: #818181;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 29.5px;
+}
+.Stay-up label.error{
+    position: absolute;
+    bottom: -16px;
+    color: red;
+    left: 0;
+    font-size: 12px;
+
+}
+
+.roundup-cancer-form .Stay-up .input-field input,
+.Stay-up .input-field select {
+    font-size: 18px;
+}
+
+.roundup-cancer-form .checked-click {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    align-items:start;
+    gap: 7px;
+}
+
+.checked-click input {
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.checked-click label,
+.checked-click label a {
+    color: var(--Primary-color, #2D9B8E);
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29.5px;
+    /* text-decoration-line: underline; */
+}
+
+.CanceLawsuit {
+    margin-top: 29px;
+    border-radius: 0 0px 20px 20px;
+    background: rgba(31, 31, 31, 0.32);
+    padding: 22px 36px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+}
+
+.CanceLawsuit li,
+.CanceLawsuit p {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 29px;
+    /* 120.833% */
+}
+
+/* my-stle */
+.the-loop h3 {
+    color: var(--black, #1F1F1F);
+    font-family: Noto Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+}
+
+.the-loop h3 span {
+    color: var(--Primary-color, #2D9B8E);
+}
+
+.Stay-up {
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+.Stay-up .input-field input,
+.Stay-up .input-field select {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid var(--Primary-color, #2D9B8E);
+    background: #FFF;
+    padding: 5px 16px;
+    font-family: Noto Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29.5px;
+}
+
+.Stay-up button {
+    border-radius: 6px;
+    background: var(--Primary-color, #2D9B8E);
+    color: var(--White, #FCFCFC);
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+    display: flex;
+    padding: 11.5px 17px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.the-loop {
+    /* margin-top: 50px; */
+    padding: 21px 16px;
+    border-radius: 12px;
+    background: var(--Foundation-Green-Light, #EAF5F4);
+}
+
+.the-loop .sty-p {
+    padding-top: 16px;
+    color: #424242;
+    font-family: Noto Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.Stay-up .input-field select {
+    height: 40px;
+    color: #B4B4B4;
+    font-family: Noto Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29.5px;
+}
+
+/* section-2 */
+
+.heard-about{
+    width: 100%;
+    max-width: 845px;
+}
+.heard-about .heard-grean-text{
+    color: var(--Foundation-Green-Normal, #2D9B8E);
+font-family: Inter;
+font-size: 28px;
+font-style: normal;
+font-weight: 500;
+line-height: 29px; /* 103.571% */
+}
+.heard-about h2{
+    padding-top: 32px;
+    color: var(--black, #1F1F1F);
+font-family: Inter;
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: 48px; /* 150% */
+}
+.heard-about p,
+.heard-about p a{
+    padding-top: 10px;
+    color: #5E5E5E;
+text-align: justify;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 35px; /* 175% */
+
+}
+.heard-about p span{
+    padding-top: 20px;
+    display: block;
+    color: #5E5E5E;
+}
+
+.heard-about ul li{
+color: #5E5E5E;
+text-align: justify;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 35px;
+}
+.accordion-body ul li{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #667085;
+}
+.v-chair-img{
+    width: 100%;
+    max-width: 558px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    margin: 0 auto;
+}
+.v-chair-img img{
+    width: 100%;
+}
+
+@media screen and (max-width: 1090px) {
+    .roundup-cancer-form {
+        max-width: 460px;
+        padding: 10px 10px;
+    }
+}
+@media screen and (max-width: 991px) {
+    .roundup-home-section .main-roundup-cancer {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .roundup-cancer-form {
+        max-width: 545px;
+    }
+}
+@media screen and (max-width: 786px) {
+    .roundup-cancer h2 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+}
+@media screen and (max-width: 520px) {
+    .pt-60 {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .heard-about h2 {
+        padding-top: 20px;
+        font-size: 26px;
+        line-height: 32px;
+    }
+    .heard-about p,
+    .heard-about ul li {
+        padding-top: 10px;
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .CanceLawsuit li, .CanceLawsuit p {
+        font-size: 20px !important;
+        line-height: 16px;
+    }
+    .roundup-cancer {
+        padding-top: 40px;
+    }
+    .roundup-cancer-form .Stay-up .input-field input, .Stay-up .input-field select {
+        font-size: 14px;
+        padding: 6px 7px;
+    }
+    .the-loop {
+        /* margin-top: 50px; */
+        padding: 21px 6px;
+    }
+    .checked-click input {
+        width: 16px;
+        height: 14px;
+    }
+    .roundup-cancer-form .checked-click {
+        grid-template-columns: 15px 1fr;
+    }
+}
+@media screen and (max-width: 425px) {
+    .container{
+        padding:0 24px ;
+    }
+    .heard-about .heard-grean-text {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .main-roundup-cancer {
+        padding: 0px 6px 0;
+    }
+    .roundup-cancer h2 {
+        font-size: 24px;
+        line-height: 39px;
+    }
+    .roundup-cancer {
+        padding-top: 20px;
+    }
+    .heard-about h2 {
+        padding-top: 10px;
+        font-size: 16px;
+        line-height: 27px;
+    }
+    .heard-about p, .heard-about ul li {
+        padding-top: 10px;
+        font-size: 12px;
+        line-height: 23px;
+    }
+    .roundup-home-section .main-roundup-cancer {
+       padding: 32px 20px;
+    }
+    .roundup-cancer p {
+        padding-top: 10px;
+        font-size: 16px;
+        line-height: 29px;
+    }
+    .roundup-cancer-form .the-loop h3 {
+        
+        font-size: 18px;
+    }
+    .roundup-cancer-form .Stay-up .input-field input,
+     .Stay-up .input-field select {
+        font-size: 14px;
+        padding: 2px 7px;
+    }
+    .CanceLawsuit li, .CanceLawsuit p {
+        font-size: 14px !important;
+        line-height: 16px;
+    }
+    .Stay-up button {
+        font-size: 16px;
+    }
+    .CanceLawsuit a svg{
+        width: 30px;
+    }
+    }
+.roundup-cancer-form .the-loop h3 span{
+    font-size:24px;
+    font-weight: 500;
+}
+/*@media screen and (max-width: 375px) {*/
+
+/*}*/
+
