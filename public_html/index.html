@@ -1040,7 +1040,7 @@
         showLoader();
         
         // get data from api
-        $.getJSON(`http://localhost:5000/api/blogs/search?query=${searchQuery}`, function({ data }){
+        $.getJSON(`https://blogs-lawsuits.onrender.com/api/blogs/search?query=${searchQuery}`, function({ data }){
 
           const {items } = data;
           
